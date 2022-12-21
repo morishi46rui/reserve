@@ -1,2 +1,97 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+        
+      <!-- 左パネル -->
+      <div class="column is-one-third">
+        <div class="columns is-multiline">
+          
+          <!-- 上部 -->
+          <div class="column is-full">
+            <div class="card">
+              
+              <!-- アバター -->
+              <div class="card-content is-horizontal-center is-flex">
+                <figure class="image is-256x256">
+                  <%= image_tag 'icon_default_avatar.jpg' %>
+                </figure>
+              </div>
+                            
+              <div class="card-content">
+                <!-- 画像アップロードボタン -->
+                <div class="content has-text-centered">
+                  <p class="title is-5">
+                    <%= current_user.full_name %>
+                  </p>
+                  <button class="button is-primary is-outlined is-fullwidth">アバター画像アップロード</button>
+                </div>
+                <hr class="h-10">
+                                
+                <!-- アカウント情報 -->
+                <article class="media">
+                  <div class="media-content">アカウント登録日</div>
+                    <div class="media-right">
+                      <strong><%= I18n.l(current_user.created_at, format: :full_date) %></strong>
+                    </div>
+                </article>
+                <hr class="h-10">
+                
+              </div>
+            </div>
+          </div>
+          <!-- 下部 -->
+          <div class="column is-full">
+            <div class="card">
+              <div class="card-content">
+                <!-- アカウント詳細 -->
+                <article>
+                  <div class="media">
+                    <div class="media-content">
+                      <p>
+                        <strong>自己紹介</strong>
+                        <br>
+                        <%= current_user.about %>
+                      </p>
+                    </div>
+                    <div class="media-right">
+                      <i class="toggle far fa-edit" aria-controls="user-about"></i>
+                    </div>
+                  </div>
+                  
+                  <div class="content">
+                    <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-about', class: 'is-hidden'} do |f| %>
+                      <div class="field">
+                        <%= f.text_area :about, autofocus: true, autocomplete: 'form', class: 'input'%>
+                      </div>
+                      <a class="toggle button is-light" aria-controls="user-about">キャンセル</a>
+                      <%= f.submit "保存", class: "button is-danger" %>
+                    <% end %>
+                  </div>
+                </article>
+                <hr class="h-10">
+                                
+                <!-- 電話番号 -->
+                <article class="media">
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 右側 -->
+      <div class="column">
+        <div class="columns is-multiline">
+                
+          <!-- 新しい部屋を登録 -->
+          <div class="column is-one-third has-text-centered">
+          </div>
+          <!-- 登録したお部屋-->
+          <div class="column is-one-third has-text-centered">
+          </div>
+                    
+        </div>
+      </div>
+            
+    </div>
+  </div>
+</section>
