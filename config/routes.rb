@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/home'
   get 'dashboard', to: 'users#dashboard'
+  get 'users/:id', to: 'users#show', as: 'user'
 
   post '/users/edit', to: 'users#update'
 
