@@ -7,7 +7,7 @@ before_action :authenticate_user!, except: [:show]
   end
 
   def new
-    @rooms = current_user.rooms.build
+    @room = current_user.rooms.build
   end
 
   def create
