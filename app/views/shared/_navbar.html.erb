@@ -31,7 +31,14 @@
       <!-- ログインしている場合 -->
       <% else %>
       <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 100px;">
-        <a class="navbar-item"><%= current_user.full_name %></a>
+        <a class="navbar-item">
+          <figure class="image is-48x48 m-r-5">
+            <div style="margin-top: 0.6rem;">
+              <%= image_tag avatar_url(current_user), class: "is-rounded" %>
+            </div>
+          </figure>
+          <%= current_user.full_name %>
+        </a>
         <div class="navbar-dropdown">
           <%= link_to "ユーザ登録情報編集", edit_user_registration_path, class: "navbar-item" %>
           <a href="" class="navbar-item"></a>

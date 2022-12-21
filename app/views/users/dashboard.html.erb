@@ -13,7 +13,7 @@
               <!-- アバター -->
               <div class="card-content is-horizontal-center is-flex">
                 <figure class="image is-256x256">
-                  <%= image_tag 'icon_default_avatar.jpg' %>
+                  <%= image_tag avatar_url(current_user), class: "is-rounded" %>
                 </figure>
               </div>
                             
@@ -23,7 +23,14 @@
                   <p class="title is-5">
                     <%= current_user.full_name %>
                   </p>
-                  <button class="button is-primary is-outlined is-fullwidth">アバター画像アップロード</button>
+                  <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
+                    <div class="file">
+                      <label class="button is-primary is-outlined is-fullwidth">
+                        <%= f.file_field :avatar, class: "file-input", onchange: "this.form.submit();" %>
+                        <i class="fas fa-upload"></i>&nbsp;&nbsp;&nbsp; アバター画像アップロード
+                      </label>
+                    </div>
+                  <% end %>   
                 </div>
                 <hr class="h-10">
                                 
@@ -35,7 +42,7 @@
                     </div>
                 </article>
                 <hr class="h-10">
-                
+
               </div>
             </div>
           </div>
