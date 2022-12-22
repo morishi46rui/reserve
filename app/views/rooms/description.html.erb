@@ -31,9 +31,9 @@
                       <br/>
                       
                       <div class="row">
-                        <div class="form-group">
-                          <label>説明</label>
-                          <%= f.text_area :summary, rows: 5, placeholder: "部屋の説明", class: "textarea", required: true, id: "autoaddress" %>
+                        <div class="field">
+                          <label for="" class="label">説明</label>
+                          <%= f.rich_text_area :description, rows: 50, cols: 50 %>
                         </div>
                       </div>
                                         

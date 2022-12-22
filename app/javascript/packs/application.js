@@ -14,3 +14,6 @@ ActiveStorage.start()
 
 window.Noty = require("noty")
 window.Dropzone = require("dropzone")
+
+require("trix")
+require("@rails/actiontext")
