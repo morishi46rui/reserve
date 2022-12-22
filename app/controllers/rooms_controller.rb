@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
   protect_from_forgery except: [:upload_photo]
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
   def index
     @rooms = current_user.rooms
@@ -23,6 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @photos = @room.photos
   end
 
   def listing
@@ -74,6 +76,14 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :description)
+  end
+
+  def is_authorised
+    redirect_to root_path, alert: "権限がありません。" unless current_user.id == @room.user_id
+  end
+  
+  def is_ready_room
+    !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
   end
 
 end

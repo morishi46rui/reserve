@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   
   root 'pages#home'
   
-  devise_for :users
+  devise_for :users, 
+              path: '', 
+              path_names: {sign_up: 'register', sign_in: 'login', edit: 'profile', sign_out: 'logout'},
+              controllers: {registrations: 'registrations'}
+
+
   get 'pages/home'
   get 'dashboard', to: 'users#dashboard'
   get 'users/:id', to: 'users#show', as: 'user'
@@ -17,6 +22,8 @@ Rails.application.routes.draw do
       get 'photo_upload'
       get 'amenities'
       get 'location'
+      delete :delete_photo
+      post :upload_photo
     end
   end
 
