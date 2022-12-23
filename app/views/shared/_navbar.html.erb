@@ -63,16 +63,16 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">ホスト</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"></a>
-              <a class="navbar-item"></a>
+              <%= link_to  "お部屋を新規登録", new_room_path, class: "navbar-item" %>
+              <%= link_to  "登録したお部屋一覧", rooms_path, class: "navbar-item" %>
+              <%= link_to "受注予約の管理", your_reservations_path, class: "navbar-item" %>
             </div>
           </div>
           
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">ゲスト</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"></a>
-              <a class="navbar-item"></a>
+              <%= link_to "ご予約の確認", your_trips_path, class: "navbar-item" %>
             </div>
           </div>
         </div>
