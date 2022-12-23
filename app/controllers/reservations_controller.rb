@@ -23,8 +23,14 @@ class ReservationsController < ApplicationController
       redirect_to room
   end
 
+  # 宿泊者側の予約確認
   def your_trips
     @trips = current_user.reservations.order(start_date: :asc)
+  end
+
+  # ホスト側の予約確認
+  def your_reservations
+    @rooms = current_user.rooms
   end
 
   private
