@@ -91,10 +91,47 @@
                 
           <!-- 新しい部屋を登録 -->
           <div class="column is-one-third has-text-centered">
+            <%= link_to new_room_path do %>
+              <div class="card">
+                <div class="card-image card-content is-horizontal-center is-flex ">
+                  <figure class="image is-256x256 ">
+                    <%= image_tag 'icon_add.png' %>
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <strong>お部屋を新規登録する</strong>
+                </div>    
+              </div>
+            <% end %>
           </div>
           <!-- 登録したお部屋-->
-          <div class="column is-one-third has-text-centered">
-          </div>
+          <% current_user.rooms.each do |room| %>
+            <% if room.active? %>
+              <div class="column is-one-third">
+                <div class="card">
+                  <div class="card-image">
+                    <%= link_to listing_room_path(room) do %>
+                      <figure class="image is-4by3">
+                        <%= image_tag room_cover(room) %>
+                      </figure>
+                    <% end %>
+                  </div>
+                  <br/>
+                  <div class="card-content p-t-5 p-b-5">
+                    <p class="subtitle is-6 m-b-5"><%= link_to room.listing_name, room_path(room), data: { turbolinks: false} %></p>
+                    <p class="subtitle is-6 m-b-5"><%= room.address %></p>
+                    <!--レビュー -->
+                  </div>
+                  <footer class="card-footer">
+                    <a class="has-text-danger is-block card-footer-item has-text-right">
+                      <span class="small-title">１泊の宿泊価格</span> 
+                      <strong><%= number_to_currency(room.price) %></strong>                                            
+                    </a>
+                  </footer>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
                     
         </div>
       </div>
