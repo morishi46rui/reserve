@@ -45,7 +45,7 @@
                   <article class="media">
                     <div class="media-content">
                       <div class="content-profile">
-                        <span class="title is-5"><%= @room.user.full_name %></span>
+                        <span class="title is-5">オーナー：<%= @room.user.full_name %></span>
                         <figure class="image is-96x96">
                             <%= image_tag avatar_url(@room.user), class: "is-rounded" %>
                         </figure>
@@ -221,6 +221,7 @@
             <div class="card">
               <div class="card-content">
                 <div class="media">
+                  <%= render 'reservations/form' %>
                 </div>
               </div>
             </div>
