@@ -68,6 +68,21 @@ class RoomsController < ApplicationController
     redirect_to photo_upload_room_path(@room)
   end
 
+  def preload
+    today = Date.today
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+    render json: reservations
+  end
+
+  def preview
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+    output = {
+      conflict: is_conflict(start_date, end_date, @room)
+    }
+    render json: output
+  end
+
   private
 
   def set_room
@@ -84,6 +99,11 @@ class RoomsController < ApplicationController
   
   def is_ready_room
     !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
+  end
+
+  def is_conflict(start_date, end_date, room)
+    check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+    check.size > 0? true : false
   end
 
 end
