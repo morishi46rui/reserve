@@ -12,6 +12,9 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require('jquery');
+require("jquery-ui/ui/widgets/datepicker");
+
 window.Noty = require("noty")
 window.Dropzone = require("dropzone")
 window.BulmaCarousel = require("bulma-extensions/bulma-carousel/dist/js/bulma-carousel")
