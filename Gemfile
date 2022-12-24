@@ -70,3 +70,6 @@ gem 'geocoder', '~> 1.4'
 
 # 検索
 gem 'ransack', '~> 2.3'
+
+# stripe
+gem 'stripe' 

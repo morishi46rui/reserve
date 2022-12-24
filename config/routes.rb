@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
   get 'search' => 'pages#search'
+  get 'settings/payment', to: 'users#payment', as: 'settings_payment'
+
 
   post '/users/edit', to: 'users#update'
+  post '/settings/payment', to: 'users#update_payment', as: "update_payment"
+
 
   resources :rooms, except: [:edit] do
     member do
