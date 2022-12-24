@@ -73,3 +73,6 @@ gem 'ransack', '~> 2.3'
 
 # stripe
 gem 'stripe' 
+
+# stripeコネクト
+gem 'omniauth-stripe-connect'

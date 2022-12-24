@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/your_reservations' => 'reservations#your_reservations'
   get 'search' => 'pages#search'
   get 'settings/payment', to: 'users#payment', as: 'settings_payment'
+  get 'settings/payout', to: 'users#payout', as: 'settings_payout'
 
 
   post '/users/edit', to: 'users#update'
