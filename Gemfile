@@ -67,3 +67,6 @@ gem 'rails-i18n'
 
 # Googleマップ
 gem 'geocoder', '~> 1.4'
+
+# 検索
+gem 'ransack', '~> 2.3'

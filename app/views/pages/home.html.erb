@@ -9,7 +9,7 @@
                 素敵なご旅行をあなたに <br>
                 どんなお部屋をお探しですか？
             </h1>
-            <%= form_for root_path, method: :get do %>
+            <%= form_tag search_path, method: :get, data: { turbolinks: false} do %>
                 <br/>
                 <br/>
                 <div class="field is-horizontal">
