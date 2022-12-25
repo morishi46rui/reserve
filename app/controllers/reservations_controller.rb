@@ -14,19 +14,20 @@ class ReservationsController < ApplicationController
       start_date = Date.parse(reservation_params[:start_date])
       end_date = Date.parse(reservation_params[:end_date])
       days = (end_date - start_date).to_i + 1
-      if days == 0
-        flash[:alert] = "宿泊日数が１泊以上でなければ予約することはできません。"
-      else
+        if days == 0
+          flash[:alert] = "宿泊日数が１泊以上でなければ予約することはできません。"
+        else
 
-      @reservation = current_user.reservations.build(reservation_params)
-      @reservation.room = room
-      @reservation.price = room.price
-      @reservation.total = room.price * days
-      @reservation.save
+        @reservation = current_user.reservations.build(reservation_params)
+        @reservation.room = room
+        @reservation.price = room.price
+        @reservation.total = room.price * days
+        @reservation.save
 
-      flash[:notice] = "予約が完了しました。"
-    end
+        flash[:notice] = "予約が完了しました。"
+        end
       redirect_to room
+    end
   end
 
   # 宿泊者側の予約確認
@@ -71,6 +72,6 @@ class ReservationsController < ApplicationController
       flash[:alert] = e.message
   end
 end
-end
+
 
 
