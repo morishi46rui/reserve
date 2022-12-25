@@ -304,3 +304,85 @@ $sides: (top, bottom, left, right);
 .is-rounded {
   padding-top: 5px;
 }
+
+// 部屋の表示
+.amenities li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  list-style-type: none;
+}
+
+.amenities .text-line-through {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.45);
+  font-size: 14px;
+}
+
+// 予約
+.reservation-table td {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dce0e0;
+  padding: 10px;
+}
+
+.reservation-table .total td {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.form-control.datepicker {
+  color: #00A699;
+  background-color: white;
+  border: 1px solid #00A699;
+  text-align: center;
+}
+
+.message-alert {
+  color: #d43242;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+// 検索
+#main {
+  height: 100%;
+  overflow: hidden;
+}
+
+#left {
+  padding: 10px 400px 10px 20px;
+  overflow: scroll;
+  height: 100%;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
+
+.map_price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00A699;
+}
+
+//通知用数字
+.badge {
+background-color: #fad4d4;
+position: relative;
+top: -15px;
+left: -15px;
+border-radius: 50%;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+.icon-babu {
+color:#14cfe7;
+}
