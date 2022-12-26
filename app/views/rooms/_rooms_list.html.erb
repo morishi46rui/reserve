@@ -14,11 +14,6 @@
                     <p class="subtitle is-6 m-b-5"><%= link_to room.listing_name, room_path(room), data: { turbolinks: false} %></p>
                     <%= room.home_type %> | ベッド<%= room.bed_room %>台
                     <p class="subtitle is-6 m-b-5"><%= room.address %></p>
-                    <!--レビュー -->
-                    <span class="star-review"><i class="fa fa-star"></i>
-                        <%= room.average_rating %>
-                        <span class="has-text-primary">(<%= room.reviews.count %>)</span>
-                    </span>
                 </div>
                 <footer class="card-footer">
                     <a class="has-text-danger is-block card-footer-item has-text-right">
