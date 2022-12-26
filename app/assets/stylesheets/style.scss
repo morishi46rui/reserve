@@ -384,5 +384,44 @@ padding-right: 5px;
 }
 
 .icon-babu {
-color:#14cfe7;
+color: #14cfe7;
+}
+
+.section-title {
+  font-size: 24px;
+  margin: 35px 0;
+  font-weight: bold;
+}
+
+.panel-area {
+  margin: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel-item {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 5px 5px;
+}
+
+span {
+  color: #565A5C;
+  font-weight: bold;
+  z-index: 1;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.panel-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 25px;
 }

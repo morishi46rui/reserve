@@ -47,7 +47,7 @@ class RoomsController < ApplicationController
 
   def update
     new_params = room_params
-    new_params = room_params.merge(active: true) 
+    new_params = room_params.merge(active: true) if is_ready_room
 
     if @room.update(new_params)
       flash[:notice] = "保存しました。"
