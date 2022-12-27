@@ -9,24 +9,6 @@
                 素敵なご旅行をあなたに <br>
                 どんなお部屋をお探しですか？
             </h1>
-            <div class="search-freeword">
-                <%= form_tag search_path, method: :get, data: { turbolinks: false} do %>
-                    <br/>
-                    <br/>
-                    <div class="field is-horizontal">
-                        <div class="field-body">
-                            <div class="control has-icons-left free-word-search">
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-search"></i>
-                                </span>
-                                <%= text_field_tag :search, params[:search], placeholder: "フリーワード検索", class: "input" %>
-                            </div>
-                            
-                            <%= submit_tag "検索", class: "button is-primary" %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
             <div class="search-destination">
                 <%= form_tag search_path, method: :get, data: { turbolinks: false} do %>
                     <br/>
