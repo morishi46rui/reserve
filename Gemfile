@@ -54,3 +54,25 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Bulma
+gem 'bulma-rails', '~> 0.7.4'
+gem 'bulma-extensions-rails', '~> 1.0.30'
+
+# Devise
+gem 'devise'
+
+# 日本語化
+gem 'rails-i18n'
+
+# Googleマップ
+gem 'geocoder', '~> 1.4'
+
+# 検索
+gem 'ransack', '~> 2.3'
+
+# stripe
+gem 'stripe' 
+
+# stripeコネクト
+gem 'omniauth-stripe-connect'

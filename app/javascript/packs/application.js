@@ -11,3 +11,21 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require('jquery');
+require("jquery-ui/ui/widgets/datepicker");
+
+window.Noty = require("noty")
+window.Dropzone = require("dropzone")
+window.BulmaCarousel = require("bulma-extensions/bulma-carousel/dist/js/bulma-carousel")
+
+$(document).on('turbolinks:load', () => {
+  $('.toggle').on('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      $('#' + e.target.getAttribute('aria-controls')).toggleClass('is-hidden');
+  })
+})
+
+require("trix")
+require("@rails/actiontext")
